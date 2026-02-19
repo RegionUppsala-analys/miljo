@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="sv" xml:lang="sv"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Avfall</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "language": {
+    "search-no-results-text": "Inget resultat",
+    "search-matching-documents-text": "matchande dokument",
+    "search-copy-link-title": "Kopiera länk för att söka",
+    "search-hide-matches-text": "Göm ytterligare resultat",
+    "search-more-match-text": "annat resultat i detta dokument",
+    "search-more-matches-text": "fler resultat i detta dokument",
+    "search-clear-button-title": "Rensa",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Avbryt",
+    "search-submit-button-title": "Verkställ",
+    "search-label": "Sök"
+  }
+}</script>
+<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+
+<script src="site_libs/plotly-binding-4.11.0/plotly.js"></script>
+
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+
+<link href="site_libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet">
+
+<script src="site_libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./Figurer/Region Uppsala_Logo_CMYK_Vit.png" alt="Region Uppsala" class="navbar-logo">
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Sök"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Skifta navigering" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Start</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Miljö.html"> 
+<span class="menu-text">Miljö</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./Avfall.html" aria-current="page"> 
+<span class="menu-text">Avfall</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Natur.html"> 
+<span class="menu-text">Natur</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Innehåll</h2>
+   
+  <ul>
+  <li><a href="#inledning" id="toc-inledning" class="nav-link active" data-scroll-target="#inledning">Inledning</a></li>
+  <li><a href="#avfallsmängder-och-materialåtervinning" id="toc-avfallsmängder-och-materialåtervinning" class="nav-link" data-scroll-target="#avfallsmängder-och-materialåtervinning">Avfallsmängder och materialåtervinning</a></li>
+  <li><a href="#avfall-per-kategori" id="toc-avfall-per-kategori" class="nav-link" data-scroll-target="#avfall-per-kategori">Avfall per kategori</a></li>
+  <li><a href="#avgift-för-avfallshämtning" id="toc-avgift-för-avfallshämtning" class="nav-link" data-scroll-target="#avgift-för-avfallshämtning">Avgift för avfallshämtning</a>
+  <ul class="collapse">
+  <li><a href="#kostnad-avfallshantering" id="toc-kostnad-avfallshantering" class="nav-link" data-scroll-target="#kostnad-avfallshantering">Kostnad avfallshantering</a></li>
+  </ul></li>
+  <li><a href="#bibliography" id="toc-bibliography" class="nav-link" data-scroll-target="#bibliography">Källor</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Avfall</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-page-left">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="inledning" class="level1">
+<h1>Inledning</h1>
+<p>Denna rapport ger en översikt över avfallshanteringen i kommunerna i Uppsala län. Fokus ligger på mängder avfall som uppstår, hur stor andel som samlas in för materialåtervinning, hur mycket som deponeras samt kostnader kopplade till avfallshämtning och hantering. Syftet är att skapa en tydlig bild av både volymer och effektivitet i kommunernas avfallshantering samt att möjliggöra jämförelser mellan kommunerna.</p>
+<p>Alla interaktiva grafer kan laddas ned genom att trycka på <img src="Figurer/download_graph.png" class="img-fluid" width="120" alt="Nerladdningsknapp">. Då sparas just den bild som visas, med exempelvis den valda regionen. Genom att dubbelklicka på kommunnamn i grafens legend så zoomas den kommunen in för en mer detaljerad vy(flera kan väljas samtidigt).</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-Miljö_8_Liljeröd_RGB" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Dekorativ bild">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-Miljö_8_Liljeröd_RGB-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Avfall_files/figure-html/fig-Miljö_8_Liljeröd_RGB-1.png" class="img-fluid figure-img" style="width:50.0%" alt="Dekorativ bild">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-Miljö_8_Liljeröd_RGB-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;1: Miljö 8 Liljeröd
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="avfallsmängder-och-materialåtervinning" class="level1">
+<h1>Avfallsmängder och materialåtervinning</h1>
+<p>Detta avsnitt beskriver hur mycket avfall som uppstår i kommunerna i länet, hur stor andel som materialåtervinns och hur mycket avfallet som går till deponi. Syftet är att ge en samlad bild av både avfallsmängder och hur effektivt avfallet tas om hand.</p>
+<ul>
+<li><p>Materialåtervinning (%) visar andel av hushållsavfall som samlats in för materialåtervinning (inklusive biologisk behandling) av totalt insamlat hushållsavfall, multiplicerat med 100 för procent. Ingår även rejekt (insamlat men ej återvinningsbart). Hushållsavfall inkluderar mat- och restavfall, grovavfall, farligt avfall och producentansvar (förpackningar, tidningar, elavfall, batterier etc.).</p></li>
+<li><p>Grovavfall till deponi (kg/invånare) visar mängden grov- och farligt avfall som deponerats.</p></li>
+<li><p>Kommunalt avfall per invånare (kg/invånare). Justeringen tar hänsyn till fritidshus, gästnätter och pendling, för att ge en mer korrekt jämförelse mellan kommuner. Kommunalt avfall inkluderar mat- och restavfall, grovavfall, farligt avfall och jämförligt avfall från verksamheter samt producentansvar.</p></li>
+</ul>
+<p>Data är hämtat från <span class="citation" data-cites="kolada">Rådet för främjande av kommunala analyser (<a href="#ref-kolada" role="doc-biblioref">2025</a>)</span> som hänvisar vidare till <span class="citation" data-cites="avfallsverige">Avfall Sverige (<a href="#ref-avfallsverige" role="doc-biblioref">2025</a>)</span>.</p>
+<div class="cell">
+<div id="fig-avfall" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-avfall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-7f9e10736a043b43420b" style="width:100%;height:742px;"></div>
+<script type="application/json" data-for="htmlwidget-7f9e10736a043b43420b">{"x":{"visdat":{"541829417d7d":["function () ","plotlyVisDat"]},"cur_data":"541829417d7d","attrs":{"541829417d7d":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[null,null,33,32,42,45,45,45,41,39,38,36,37,37,36],"type":"scatter","mode":"lines+markers","name":"Enköping","line":{"color":"#D57667","width":5},"marker":{"color":"#D57667","size":8},"visible":true,"inherit":true},"541829417d7d.1":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[null,null,31,32,33,38,39,39,34,35,38,36,37,37,36],"type":"scatter","mode":"lines+markers","name":"Heby","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":true,"inherit":true},"541829417d7d.2":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[null,27,27,28,39,40,42,42,37,35,36,46,44,39,46],"type":"scatter","mode":"lines+markers","name":"Håbo","line":{"color":"#019CD7","width":5},"marker":{"color":"#019CD7","size":8},"visible":true,"inherit":true},"541829417d7d.3":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[33,35,37,38,38,40,41,42,37,36,30,35,38,40,47],"type":"scatter","mode":"lines+markers","name":"Knivsta","line":{"color":"#D0342C","width":5},"marker":{"color":"#D0342C","size":8},"visible":true,"inherit":true},"541829417d7d.4":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[null,null,null,null,null,null,null,null,null,null,33,46,32,39,32],"type":"scatter","mode":"lines+markers","name":"Tierp","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":true,"inherit":true},"541829417d7d.5":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[37,37,38,39,46,47,48,47,43,43,43,43,44,44,38],"type":"scatter","mode":"lines+markers","name":"Uppsala","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":true,"inherit":true},"541829417d7d.6":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[44,43,48,46,45,46,48,49,46,47,46,46,48,48,49],"type":"scatter","mode":"lines+markers","name":"Älvkarleby","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":true,"inherit":true},"541829417d7d.7":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[null,null,22,27,25,30,34,36,null,null,null,null,null,32,null],"type":"scatter","mode":"lines+markers","name":"Östhammar","line":{"color":"#E67E22","width":5},"marker":{"color":"#E67E22","size":8},"visible":true,"inherit":true},"541829417d7d.8":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[null,null,6.25,3.71,2.3799999999999999,2.04,1.73],"type":"scatter","mode":"lines+markers","name":"Enköping","line":{"color":"#D57667","width":5},"marker":{"color":"#D57667","size":8},"visible":false,"inherit":true},"541829417d7d.9":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[null,null,6.25,3.71,2.3799999999999999,2.04,1.73],"type":"scatter","mode":"lines+markers","name":"Heby","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":false,"inherit":true},"541829417d7d.10":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[2.9300000000000002,2.4700000000000002,3.1499999999999999,1.6100000000000001,1.3500000000000001,1.48,1.25],"type":"scatter","mode":"lines+markers","name":"Håbo","line":{"color":"#019CD7","width":5},"marker":{"color":"#019CD7","size":8},"visible":false,"inherit":true},"541829417d7d.11":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[4.7999999999999998,5.2400000000000002,6.6500000000000004,7.1600000000000001,6.4500000000000002,6.2699999999999996,7.71],"type":"scatter","mode":"lines+markers","name":"Knivsta","line":{"color":"#D0342C","width":5},"marker":{"color":"#D0342C","size":8},"visible":false,"inherit":true},"541829417d7d.12":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[null,null,24,50,42,24,33],"type":"scatter","mode":"lines+markers","name":"Tierp","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":false,"inherit":true},"541829417d7d.13":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[2.6400000000000001,2.4300000000000002,2.8799999999999999,0.19,0.20999999999999999,0.31,0.33000000000000002],"type":"scatter","mode":"lines+markers","name":"Uppsala","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":false,"inherit":true},"541829417d7d.14":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[4.0599999999999996,3.7400000000000002,4.25,3.7400000000000002,3.7200000000000002,1.9399999999999999,2.5499999999999998],"type":"scatter","mode":"lines+markers","name":"Älvkarleby","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":false,"inherit":true},"541829417d7d.15":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[null,null,null,null,null,18.199999999999999,null],"type":"scatter","mode":"lines+markers","name":"Östhammar","line":{"color":"#E67E22","width":5},"marker":{"color":"#E67E22","size":8},"visible":false,"inherit":true},"541829417d7d.16":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[525.68793819999996,596.5,545,536,563,590,558,489,500,562,555,501,482,467],"type":"scatter","mode":"lines+markers","name":"Enköping","line":{"color":"#D57667","width":5},"marker":{"color":"#D57667","size":8},"visible":false,"inherit":true},"541829417d7d.17":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[585.53485109999997,623.79999999999995,601,583,625,654,674,598,586,562,555,501,482,467],"type":"scatter","mode":"lines+markers","name":"Heby","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":false,"inherit":true},"541829417d7d.18":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[587.03389589999995,600.91999999999996,609,625,616,602,595,521,523,583,546,507,468,499],"type":"scatter","mode":"lines+markers","name":"Håbo","line":{"color":"#019CD7","width":5},"marker":{"color":"#019CD7","size":8},"visible":false,"inherit":true},"541829417d7d.19":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[394.19050829999998,381.37,424,448,496,472,436,429,475,452,398,413,361,382],"type":"scatter","mode":"lines+markers","name":"Knivsta","line":{"color":"#D0342C","width":5},"marker":{"color":"#D0342C","size":8},"visible":false,"inherit":true},"541829417d7d.20":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[null,null,null,null,null,null,null,300,null,546,400,558,494,491],"type":"scatter","mode":"lines+markers","name":"Tierp","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":false,"inherit":true},"541829417d7d.21":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[455.46112140000002,433.80000000000001,438,425,436,430,417,409,384,392,373,354,328,334],"type":"scatter","mode":"lines+markers","name":"Uppsala","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":false,"inherit":true},"541829417d7d.22":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[526.51643899999999,488.55000000000001,516,513,524,449,447,432,423,428,421,390,362,383],"type":"scatter","mode":"lines+markers","name":"Älvkarleby","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":false,"inherit":true},"541829417d7d.23":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[356.67894760000001,638.92999999999995,435,460,673,546,605,null,null,null,null,null,455,null],"type":"scatter","mode":"lines+markers","name":"Östhammar","line":{"color":"#E67E22","width":5},"marker":{"color":"#E67E22","size":8},"visible":false,"inherit":true}},"layout":{"margin":{"b":60,"l":60,"t":120,"r":10},"title":{"text":"<b> Kommunalt avfall som samlats in för<br />materialåtervinning, inkl. biologisk behandling,<br />andel (%) <b>","y":0.94999999999999996,"x":0.55000000000000004,"font":{"size":20,"color":"#B81867"}},"xaxis":{"domain":[0,1],"automargin":true,"title":"","tickangle":-45,"type":"category","categoryorder":"array","categoryarray":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"]},"yaxis":{"domain":[0,1],"automargin":true,"title":"<b>Andel (%)<b>","rangemode":"tozero"},"hovermode":"x unified","updatemenus":[{"y":-0.10000000000000001,"x":1.1000000000000001,"buttons":[{"method":"update","args":[{"visible":[true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"<b> Kommunalt avfall som samlats in för<br />materialåtervinning, inkl. biologisk behandling,<br />andel (%) <b>","yaxis":{"title":"<b> Materialåtervinning (%) <b>","rangemode":"tozero"}}],"label":"Materialåtervinning (%)"},{"method":"update","args":[{"visible":[false,false,false,false,false,false,false,false,true,true,true,true,true,true,true,true,false,false,false,false,false,false,false,false]},{"title":"<b> Mängd kommunalt avfall till deponi, kg/invånare<br />(justerat) <b>","yaxis":{"title":"<b> Avfall till deponi (kg/invånare) <b>","rangemode":"tozero"}}],"label":"Avfall till deponi (kg/invånare)"},{"method":"update","args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,true,true,true,true]},{"title":"<b> Insamlat kommunalt avfall totalt, kg/invånare<br />(justerat) <b>","yaxis":{"title":"<b> Totalt insamlat avfall (kg/invånare) <b>","rangemode":"tozero"}}],"label":"Totalt insamlat avfall (kg/invånare)"}],"direction":"up"}],"annotations":[{"text":"Källa: Kolada och Avfall Sverige","x":0,"y":-0.14999999999999999,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"bottom","showarrow":false,"font":{"size":12}}],"showlegend":true},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","zoomIn2d","zoomOut2d"],"displaylogo":false},"data":[{"x":["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[33,32,42,45,45,45,41,39,38,36,37,37,36],"type":"scatter","mode":"lines+markers","name":"Enköping","line":{"color":"#D57667","width":5},"marker":{"color":"#D57667","size":8,"line":{"color":"rgba(31,119,180,1)"}},"visible":true,"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[31,32,33,38,39,39,34,35,38,36,37,37,36],"type":"scatter","mode":"lines+markers","name":"Heby","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(255,127,14,1)"}},"visible":true,"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[27,27,28,39,40,42,42,37,35,36,46,44,39,46],"type":"scatter","mode":"lines+markers","name":"Håbo","line":{"color":"#019CD7","width":5},"marker":{"color":"#019CD7","size":8,"line":{"color":"rgba(44,160,44,1)"}},"visible":true,"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[33,35,37,38,38,40,41,42,37,36,30,35,38,40,47],"type":"scatter","mode":"lines+markers","name":"Knivsta","line":{"color":"#D0342C","width":5},"marker":{"color":"#D0342C","size":8,"line":{"color":"rgba(214,39,40,1)"}},"visible":true,"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2020","2021","2022","2023","2024"],"y":[33,46,32,39,32],"type":"scatter","mode":"lines+markers","name":"Tierp","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(148,103,189,1)"}},"visible":true,"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[37,37,38,39,46,47,48,47,43,43,43,43,44,44,38],"type":"scatter","mode":"lines+markers","name":"Uppsala","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(140,86,75,1)"}},"visible":true,"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[44,43,48,46,45,46,48,49,46,47,46,46,48,48,49],"type":"scatter","mode":"lines+markers","name":"Älvkarleby","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(227,119,194,1)"}},"visible":true,"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2012","2013","2014","2015","2016","2017",null,"2023"],"y":[22,27,25,30,34,36,null,32],"type":"scatter","mode":"lines+markers","name":"Östhammar","line":{"color":"#E67E22","width":5},"marker":{"color":"#E67E22","size":8,"line":{"color":"rgba(127,127,127,1)"}},"visible":true,"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2020","2021","2022","2023","2024"],"y":[6.25,3.71,2.3799999999999999,2.04,1.73],"type":"scatter","mode":"lines+markers","name":"Enköping","line":{"color":"#D57667","width":5},"marker":{"color":"#D57667","size":8,"line":{"color":"rgba(188,189,34,1)"}},"visible":false,"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2020","2021","2022","2023","2024"],"y":[6.25,3.71,2.3799999999999999,2.04,1.73],"type":"scatter","mode":"lines+markers","name":"Heby","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(23,190,207,1)"}},"visible":false,"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[2.9300000000000002,2.4700000000000002,3.1499999999999999,1.6100000000000001,1.3500000000000001,1.48,1.25],"type":"scatter","mode":"lines+markers","name":"Håbo","line":{"color":"#019CD7","width":5},"marker":{"color":"#019CD7","size":8,"line":{"color":"rgba(31,119,180,1)"}},"visible":false,"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[4.7999999999999998,5.2400000000000002,6.6500000000000004,7.1600000000000001,6.4500000000000002,6.2699999999999996,7.71],"type":"scatter","mode":"lines+markers","name":"Knivsta","line":{"color":"#D0342C","width":5},"marker":{"color":"#D0342C","size":8,"line":{"color":"rgba(255,127,14,1)"}},"visible":false,"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2020","2021","2022","2023","2024"],"y":[24,50,42,24,33],"type":"scatter","mode":"lines+markers","name":"Tierp","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(44,160,44,1)"}},"visible":false,"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[2.6400000000000001,2.4300000000000002,2.8799999999999999,0.19,0.20999999999999999,0.31,0.33000000000000002],"type":"scatter","mode":"lines+markers","name":"Uppsala","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(214,39,40,1)"}},"visible":false,"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018","2019","2020","2021","2022","2023","2024"],"y":[4.0599999999999996,3.7400000000000002,4.25,3.7400000000000002,3.7200000000000002,1.9399999999999999,2.5499999999999998],"type":"scatter","mode":"lines+markers","name":"Älvkarleby","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(148,103,189,1)"}},"visible":false,"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2023"],"y":[18.199999999999999],"type":"scatter","mode":"lines+markers","name":"Östhammar","line":{"color":"#E67E22","width":5},"marker":{"color":"#E67E22","size":8,"line":{"color":"rgba(140,86,75,1)"}},"visible":false,"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[525.68793819999996,596.5,545,536,563,590,558,489,500,562,555,501,482,467],"type":"scatter","mode":"lines+markers","name":"Enköping","line":{"color":"#D57667","width":5},"marker":{"color":"#D57667","size":8,"line":{"color":"rgba(227,119,194,1)"}},"visible":false,"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[585.53485109999997,623.79999999999995,601,583,625,654,674,598,586,562,555,501,482,467],"type":"scatter","mode":"lines+markers","name":"Heby","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(127,127,127,1)"}},"visible":false,"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[587.03389589999995,600.91999999999996,609,625,616,602,595,521,523,583,546,507,468,499],"type":"scatter","mode":"lines+markers","name":"Håbo","line":{"color":"#019CD7","width":5},"marker":{"color":"#019CD7","size":8,"line":{"color":"rgba(188,189,34,1)"}},"visible":false,"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[394.19050829999998,381.37,424,448,496,472,436,429,475,452,398,413,361,382],"type":"scatter","mode":"lines+markers","name":"Knivsta","line":{"color":"#D0342C","width":5},"marker":{"color":"#D0342C","size":8,"line":{"color":"rgba(23,190,207,1)"}},"visible":false,"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2018",null,"2020","2021","2022","2023","2024"],"y":[300,null,546,400,558,494,491],"type":"scatter","mode":"lines+markers","name":"Tierp","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(31,119,180,1)"}},"visible":false,"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[455.46112140000002,433.80000000000001,438,425,436,430,417,409,384,392,373,354,328,334],"type":"scatter","mode":"lines+markers","name":"Uppsala","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(255,127,14,1)"}},"visible":false,"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],"y":[526.51643899999999,488.55000000000001,516,513,524,449,447,432,423,428,421,390,362,383],"type":"scatter","mode":"lines+markers","name":"Älvkarleby","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(44,160,44,1)"}},"visible":false,"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":["2011","2012","2013","2014","2015","2016","2017",null,"2023"],"y":[356.67894760000001,638.92999999999995,435,460,673,546,605,null,455],"type":"scatter","mode":"lines+markers","name":"Östhammar","line":{"color":"#E67E22","width":5},"marker":{"color":"#E67E22","size":8,"line":{"color":"rgba(214,39,40,1)"}},"visible":false,"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-avfall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;2
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Älvkarleby är den kommunen i länet som har högst andel kommunalt avfall som samlats in för återvinning över en stor del av perioden. Håbo och Knivsta visar en svag uppgående trend över tid som har varierat över åren, Enköping och Uppsala visar en högre andel mellan 2013 och 2016 än vad de har 2024. Det saknas data för flera av åren för Tierp och Östhammar, vilket gör det svårare att analysera trenderna, men Östhammar har lägst andel av kommunerna för samtliga år data finns tillgängligt.</p>
+<p>Angående avfall till deponi så har Tierp mycket högre kg/invånare än resterande kommuner och klickar man bort Tierp och Östhammar från grafen så syns det att Enköping, Heby, Håbo, Uppsala och Älvkarleby har en minskande trend, medan Knivsta har en ökande. Enköping och Heby har exakt samma värde under perioden.</p>
+<p>Det totalt insamlade avfall per invånare visar en minskade trend för alla kommuner i länet utom Tierp och Östhammar. Håbo, Tierp och Enköping är de tre kommunerna med högst totalt insamlade avfall per invånare år 2024 medan Uppsala, Knivsta och Älvkarleby är de kommunerna med lägst nivåer 2024.</p>
+</section>
+<section id="avfall-per-kategori" class="level1">
+<h1>Avfall per kategori</h1>
+<p>I detta delkapitel visas hur det kommunala avfallet fördelar sig mellan olika avfallskategorier, till exempel mat- och restavfall, förpackningar, farligt avfall och grovavfall. Fördelningen ger en mer detaljerad bild av vilken typ av avfall som dominerar i respektive kommun.</p>
+<p>Avfallshanteringen i kommunerna delas in i fyra huvudkategorier.</p>
+<ul>
+<li><p>Mat- och restavfall omfattar hushållsavfall, inklusive brännbart avfall och matavfall, samt jämförligt avfall från exempelvis affärer, kontor, industrier och restauranger.</p></li>
+<li><p>Förpackningar och returpapper består av insamlade förpackningar av papper, plast, glas och metall samt returpapper som omfattas av producentansvar.</p></li>
+<li><p>Farligt avfall inkluderar småkemikalier, färg, oljehaltigt avfall, impregnerat trä, asbest samt batterier och elavfall som exempelvis vitvaror, elektronik och lampor.</p></li>
+<li><p>Slutligen omfattar grovavfall till exempel trädgårdsavfall, utsorterat trä, övrigt brännbart, wellpapp, metallskrot, gips, planglas, kommunplast, deponirest samt övrigt grovavfall, från både hushåll och verksamhet. Däremot ska till exempel inte byggavfall från snickeriföretaget, men många kommuner har problem att skilja på detta vilket gör att det kan ingå i data.</p></li>
+</ul>
+<p>Data är hämtat från <span class="citation" data-cites="kolada">Rådet för främjande av kommunala analyser (<a href="#ref-kolada" role="doc-biblioref">2025</a>)</span> som hänvisar vidare till <span class="citation" data-cites="avfallsverige">Avfall Sverige (<a href="#ref-avfallsverige" role="doc-biblioref">2025</a>)</span> via FTI och de nämner att i förekommande fall kompletterande uppgifter från kommunen avseende fastighetsnära insamling.</p>
+<p>Enligt <span class="citation" data-cites="kolada">Rådet för främjande av kommunala analyser (<a href="#ref-kolada" role="doc-biblioref">2025</a>)</span> har invånarantalet justerats för att ta hänsyn till fritidshus, gästnätter samt in- och utpendling. Detta gör att avfallsmängder i kommuner med mycket turism eller fritidshus speglas på ett mer korrekt sätt och blir jämförbara med andra kommuner.</p>
+<div class="cell">
+<div id="fig-avfallkategori" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-avfallkategori-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-6eb73b92d0744988655c" style="width:100%;height:742px;"></div>
+<script type="application/json" data-for="htmlwidget-6eb73b92d0744988655c">{"x":{"visdat":{"54187f1ccd0":["function () ","plotlyVisDat"],"54185cad6258":["function () ","data"],"5418110427a9":["function () ","data"],"541816ac1ffe":["function () ","data"],"5418736b13ac":["function () ","data"],"5418693e73b6":["function () ","data"],"541868346ebe":["function () ","data"],"541810052aae":["function () ","data"],"541847a5309a":["function () ","data"],"5418621e449c":["function () ","data"],"5418436e71c5":["function () ","data"],"54184d491253":["function () ","data"],"54185ae71ec5":["function () ","data"],"5418c4a2293":["function () ","data"],"5418649a6b8e":["function () ","data"],"54181c8f7126":["function () ","data"],"541851011b3d":["function () ","data"],"54183712c28":["function () ","data"],"5418a917008":["function () ","data"],"5418508123a7":["function () ","data"],"541816f75775":["function () ","data"],"5418649d376c":["function () ","data"],"54185da126cb":["function () ","data"],"541810e05717":["function () ","data"],"541837807bc6":["function () ","data"],"541842622872":["function () ","data"],"54182c0c158f":["function () ","data"],"54187afd27ff":["function () ","data"],"54187f8939eb":["function () ","data"],"541871af57d3":["function () ","data"],"541876897ab3":["function () ","data"],"5418124150a7":["function () ","data"],"541872b36f84":["function () ","data"]},"cur_data":"541872b36f84","attrs":{"54185cad6258":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":true,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418110427a9":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":true,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541816ac1ffe":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":true,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418736b13ac":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":true,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418693e73b6":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541868346ebe":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541810052aae":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541847a5309a":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418621e449c":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418436e71c5":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"54184d491253":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"54185ae71ec5":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418c4a2293":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418649a6b8e":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"54181c8f7126":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541851011b3d":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"54183712c28":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418a917008":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418508123a7":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541816f75775":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418649d376c":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"54185da126cb":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541810e05717":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541837807bc6":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541842622872":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"54182c0c158f":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"54187afd27ff":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"54187f8939eb":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541871af57d3":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541876897ab3":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"5418124150a7":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true},"541872b36f84":{"alpha_stroke":1,"sizes":[10,100],"spans":[1,20],"x":{},"y":{},"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8},"visible":false,"hovertemplate":" %{y:.1f} kg/inv","inherit":true}},"layout":{"margin":{"b":100,"l":60,"t":120,"r":10},"hovermode":"x unified","title":{"text":"<b>Insamlat avfall per kategori – Enköping <b>","font":{"size":20,"color":"#B81867"}},"xaxis":{"domain":[0,1],"automargin":true,"title":"","tickmode":"linear","tickangle":-45},"yaxis":{"domain":[0,1],"automargin":true,"title":"<b>Kg/invånare<b>"},"showlegend":true,"legend":{"orientation":"h","x":0.5,"y":-0.25,"xanchor":"center","yanchor":"bottom","font":{"size":14}},"updatemenus":[{"active":0,"buttons":[{"method":"update","args":[{"visible":[true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"<b>Insamlat avfall per kategori – Enköping <b>"}],"label":"Enköping"},{"method":"update","args":[{"visible":[false,false,false,false,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"<b>Insamlat avfall per kategori – Heby <b>"}],"label":"Heby"},{"method":"update","args":[{"visible":[false,false,false,false,false,false,false,false,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"<b>Insamlat avfall per kategori – Håbo <b>"}],"label":"Håbo"},{"method":"update","args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"<b>Insamlat avfall per kategori – Knivsta <b>"}],"label":"Knivsta"},{"method":"update","args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false,false,false,false,false,false,false,false,false,false,false,false]},{"title":"<b>Insamlat avfall per kategori – Tierp <b>"}],"label":"Tierp"},{"method":"update","args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false,false,false,false,false,false,false,false]},{"title":"<b>Insamlat avfall per kategori – Uppsala <b>"}],"label":"Uppsala"},{"method":"update","args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true,false,false,false,false]},{"title":"<b>Insamlat avfall per kategori – Älvkarleby <b>"}],"label":"Älvkarleby"},{"method":"update","args":[{"visible":[false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,true,true,true,true]},{"title":"<b>Insamlat avfall per kategori – Östhammar <b>"}],"label":"Östhammar"}],"direction":"down","x":0,"xanchor":"center","y":1.1000000000000001,"yanchor":"top"}],"annotations":[{"text":"Källa: Kolada och Avfall Sverige","x":0,"y":-0.14999999999999999,"xref":"paper","yref":"paper","xanchor":"left","yanchor":"bottom","showarrow":false,"font":{"size":12}}]},"source":"A","config":{"modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false,"modeBarButtonsToRemove":["zoom2d","pan2d","select2d","lasso2d","zoomIn2d","zoomOut2d"],"displaylogo":false},"data":[{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[30,30.289999999999999,30,28,34,18.289999999999999,18.350000000000001,16.809999999999999,26,29,22,20,32],"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(31,119,180,1)"}},"visible":true,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[81,63,62,85,87,81,65,59,66,66,64.280000000000001,61.829999999999998,55.770000000000003],"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(255,127,14,1)"}},"visible":true,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[246,241,232,235,260,254,203,230,273,268,231,222,197],"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(44,160,44,1)"}},"visible":true,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[212,211,211,216,208,204,203,194,197,192,184,179,180],"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(214,39,40,1)"}},"visible":true,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[33,34.770000000000003,30,34,46,60,36,32,26,29,22,20,32],"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(148,103,189,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[93,88,64,84,83,75,62,62,66,66,64.280000000000001,61.829999999999998,55.770000000000003],"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(140,86,75,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[264,275,291,306,323,339,300,301,273,268,231,222,197],"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(227,119,194,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[204,204,198,201,202,200,200,191,197,192,184,179,180],"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(127,127,127,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[35,39.710000000000001,40,38,38,34,33,36,40,38,32,29,32],"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(188,189,34,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[66,63,72,65,70,71,65,57,74,103,89.969999999999999,52.399999999999999,79.689999999999998],"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(23,190,207,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[265,277,284,296,283,292,225,223,258,223,208,213,210],"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(31,119,180,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[235,229,229,216,211,198,198,207,211,183,177,174,169],"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(255,127,14,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[16.370000000000001,16.309999999999999,17.140000000000001,14.890000000000001,15.41,14.32,12.76,16.25,29,30,22,17.300000000000001,21],"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(44,160,44,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[51,60,58,63,63,52,58,57,50,39,68.180000000000007,59.329999999999998,57.549999999999997],"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(214,39,40,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[140,177,184,204,188,174,161,181,211,176,173,135,156],"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(148,103,189,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[174,171,188,214,205,195,197,220,162,154,150,150,148],"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(140,86,75,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2017,2018,2020,2021,2022,2023,2024],"y":[17.68,15.039999999999999,32,24,29,17.690000000000001,34],"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(227,119,194,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[79,75,65,67,66,65,60,52.909999999999997,48.289999999999999,48.75],"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(127,127,127,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2018,2020,2021,2022,2023,2024],"y":[42,285,169,351,289,248],"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(188,189,34,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2016,2017,2018,2020,2021,2022,2023,2024],"y":[142,183,176,163,147,126,138,160],"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(23,190,207,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[16.800000000000001,15.34,13.76,13.16,12.220000000000001,12.19,11.800000000000001,15.17,17.48,16.27,13.539999999999999,12.539999999999999,15.19],"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(31,119,180,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[82,82,80,75,76,71,66,65,66,65,63.350000000000001,58.079999999999998,52.189999999999998],"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(255,127,14,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[120,127,122,142,138,137,136,118,127,114,105,93,98],"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(44,160,44,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(44,160,44,1)"},"error_x":{"color":"rgba(44,160,44,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[215,214,210,206,204,197,195,186,182,178,172,164,164],"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(214,39,40,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(214,39,40,1)"},"error_x":{"color":"rgba(214,39,40,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[27,27.079999999999998,26,26,25,26,20,18.52,21,19.34,16.75,14.73,15.449999999999999],"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(148,103,189,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(148,103,189,1)"},"error_x":{"color":"rgba(148,103,189,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[88,83,79,76,77,74,72,71,74,74,66.439999999999998,61.920000000000002,63.899999999999999],"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(140,86,75,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(140,86,75,1)"},"error_x":{"color":"rgba(140,86,75,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[155,188,189,201,127,133,131,126,132,126,114,97,109],"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(227,119,194,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(227,119,194,1)"},"error_x":{"color":"rgba(227,119,194,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[219,218,219,220,219,213,209,207,201,202,193,189,189],"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(127,127,127,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(127,127,127,1)"},"error_x":{"color":"rgba(127,127,127,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2023],"y":[23,18.98,26,25,32,27,27],"type":"scatter","mode":"lines+markers","name":"Farligt avfall","line":{"color":"#6F787E","width":5},"marker":{"color":"#6F787E","size":8,"line":{"color":"rgba(188,189,34,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(188,189,34,1)"},"error_x":{"color":"rgba(188,189,34,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2018,2019,2020,2023,2024],"y":[67,66,69,69,70,60,67,57,56,45.770000000000003,54.859999999999999],"type":"scatter","mode":"lines+markers","name":"Förpackningar och returpapper","line":{"color":"#F9B000","width":5},"marker":{"color":"#F9B000","size":8,"line":{"color":"rgba(23,190,207,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(23,190,207,1)"},"error_x":{"color":"rgba(23,190,207,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2020,2023],"y":[292,107,99,294,194,280,120,168],"type":"scatter","mode":"lines+markers","name":"Grovavfall","line":{"color":"#8B4A9C","width":5},"marker":{"color":"#8B4A9C","size":8,"line":{"color":"rgba(31,119,180,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(31,119,180,1)"},"error_x":{"color":"rgba(31,119,180,1)"},"xaxis":"x","yaxis":"y","frame":null},{"x":[2012,2013,2014,2015,2016,2017,2020,2023,2024],"y":[259,243,266,285,250,237,235,214,210],"type":"scatter","mode":"lines+markers","name":"Mat- och restavfall","line":{"color":"#4AA271","width":5},"marker":{"color":"#4AA271","size":8,"line":{"color":"rgba(255,127,14,1)"}},"visible":false,"hovertemplate":[" %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"," %{y:.1f} kg/inv"],"error_y":{"color":"rgba(255,127,14,1)"},"error_x":{"color":"rgba(255,127,14,1)"},"xaxis":"x","yaxis":"y","frame":null}],"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-avfallkategori-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;3
+</figcaption>
+</figure>
+</div>
+</div>
+<p>Grovavfall dominerar i de flesta kommuner, medan mat- och restavfall är störst i Uppsala, Älvkarleby och Östhammar. Trenden över de senaste fem åren visar generellt minskningar, men Håbo och Knivsta har små ökningar för till exempel förpackningar och returer. Detta kan dock ses som positivt, eftersom mer material samlas in för återvinning istället för att gå till deponi eller förbränning om det hade varit restavfall.</p>
+</section>
+<section id="avgift-för-avfallshämtning" class="level1">
+<h1>Avgift för avfallshämtning</h1>
+<p><a href="#fig-avgift_avfall" class="quarto-xref">Figur&nbsp;4</a> visar kostnaden för avfallshämtning i kronor per kvadratmeter inklusive moms under ett år för en typfastighet i kommunen. Typfastigheten utgörs av ett flerbostadshus med en boendeyta på 1 000 kvadratmeter.</p>
+<p>Inför år 2024 har en ny avfallsdefinition införts, och insamlingen sker via Avfall Sveriges statistik- och insamlingsverktyg Avfall Web. Den nya definitionen anger att avfallsmängden motsvarar hämtning en gång per vecka av ett 660-liters restavfallskärl och ett 140-liters matavfallskärl, med en antagen dragväg på 9 meter.</p>
+<p>Data är hämtat från <span class="citation" data-cites="kolada">Rådet för främjande av kommunala analyser (<a href="#ref-kolada" role="doc-biblioref">2025</a>)</span> som refererar till <span class="citation" data-cites="nilsholgersson">Nils Holgersson-gruppen (<a href="#ref-nilsholgersson" role="doc-biblioref">2025</a>)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-avgift_avfall" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Figuren visar avgiften för avfallshantering för år 2025 för kommunerna i länet, enheten är kronor per kvadratmeter.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-avgift_avfall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figurer/avgift_avfall.svg" id="fig-avgift_avfall" class="img-fluid figure-img" alt="Figuren visar avgiften för avfallshantering för år 2025 för kommunerna i länet, enheten är kronor per kvadratmeter.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-avgift_avfall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;4
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div style="margin-top:0.5rem;">
+  <div class="download-dropdown">
+    <span class="download-btn">Ladda ner</span>
+    <div class="download-menu">
+      <a href="Figurer/avgift_avfall.svg" download="">Som SVG</a>
+      <a href="Figurer/avgift_avfall.png" download="">Som PNG</a>
+    </div>
+  </div>
+</div>
+<p>De högsta avgifterna för avfallshämtning i länet finns i Håbo och Knivsta på över 25 kronor/kvadratmeter, de lägsta priserna finns i Uppsala och Östhammar på runt 18 respektive 20 kr/kvm.</p>
+<section id="kostnad-avfallshantering" class="level2">
+<h2 class="anchored" data-anchor-id="kostnad-avfallshantering">Kostnad avfallshantering</h2>
+<p><a href="#fig-kost_avfall" class="quarto-xref">Figur&nbsp;5</a> visar nettokostnaden för avfallshantering per invånare i kommunen den 31 december. Den beräknas som bruttokostnad minus interna intäkter och försäljning till andra kommuner och regioner, dividerat med antalet invånare. Med nettokostnad avses bruttokostnad minus bruttointäkter.</p>
+<p>Nettokostnaden omfattar produktion och distribution av avfallshantering och avser endast avfallshantering som bedrivs i förvaltningsform.</p>
+<p>Data är hämtat från <span class="citation" data-cites="kolada">Rådet för främjande av kommunala analyser (<a href="#ref-kolada" role="doc-biblioref">2025</a>)</span> som refererar till <span class="citation" data-cites="scb_statistikdatabasen">Statistiska centralbyrån (SCB) (<a href="#ref-scb_statistikdatabasen" role="doc-biblioref">2025</a>)</span>.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-kost_avfall" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Figuren visar kostnaden och nettokostnaden för avfallshantering för år 2024 för kommunerna i länet, enheten är kronor per invånare.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kost_avfall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Figurer/kost_avfall.svg" id="fig-kost_avfall" class="img-fluid figure-img" alt="Figuren visar kostnaden och nettokostnaden för avfallshantering för år 2024 för kommunerna i länet, enheten är kronor per invånare.">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-kost_avfall-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figur&nbsp;5
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div style="margin-top:0.5rem;">
+  <div class="download-dropdown">
+    <span class="download-btn">Ladda ner</span>
+    <div class="download-menu">
+      <a href="Figurer/kost_avfall.svg" download="">Som SVG</a>
+      <a href="Figurer/kost_avfall.png" download="">Som PNG</a>
+    </div>
+  </div>
+</div>
+<p>Den högsta bruttokostnaden för avfallshantering är i Östhammar följt av Håbo och Knivsta, det är stora skillnader mellan kommunerna, men eftersom data endast är för avfallshantering i förvaltningsform gör det att en del data kan saknas, Uppsala kommun har värdet 0 i grafen.</p>
+<p>Nettokostnaden i Tierp är negativ på runt -550kr/invånare, vilket då visar att intäkterna är större än kostnaderna, till skillnad mot Älvkarleby och Östhammar som har nettokostnader på 105 respektive 61 kr/invånare</p>
+
+
+</section>
+</section>
+<section id="bibliography" class="level1 unnumbered">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">Källor</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-avfallsverige" class="csl-entry" role="listitem">
+Avfall Sverige. 2025. <span>”Avfall Sverige – kommunernas branschorganisation inom avfallshantering”</span>. <a href="https://www.avfallsverige.se/">https://www.avfallsverige.se/</a>.
+</div>
+<div id="ref-nilsholgersson" class="csl-entry" role="listitem">
+Nils Holgersson-gruppen. 2025. <span>”Nils Holgersson-rapporten”</span>. <a href="https://nilsholgersson.nu/">https://nilsholgersson.nu/</a>.
+</div>
+<div id="ref-kolada" class="csl-entry" role="listitem">
+Rådet för främjande av kommunala analyser. 2025. <span>”Kolada – Jämför och analysera nyckeltal i kommuner och regioner”</span>. <a href="https://www.kolada.se/">https://www.kolada.se/</a>.
+</div>
+<div id="ref-scb_statistikdatabasen" class="csl-entry" role="listitem">
+Statistiska centralbyrån (SCB). 2025. <span>”Statistikdatabasen”</span>. <a href="https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/">https://www.statistikdatabasen.scb.se/pxweb/sv/ssd/</a>.
+</div>
+</div></section></div></main> <!-- /main -->
+
+
+
+
+<div class="contact-widget">
+
+  <input type="checkbox" id="contact-toggle">
+
+
+
+  <label for="contact-toggle" class="contact-button" title="Kontakt">
+
+    💬
+
+  </label>
+
+
+
+  <div class="floating-contact-box">
+
+    <strong>Vid frågor kontakta</strong><br>
+
+    Region Uppsala - Regional Utveckling <br>
+
+    <a href="mailto:regionalutveckling.analys@regionuppsala.se">regionalutveckling.analys@regionuppsala.se</a><br>
+
+  </div>
+
+</div>
+
+
+
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Kopierat!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Kopierat!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
